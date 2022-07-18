@@ -1,3 +1,5 @@
+@import "colors";
+
 * {
   margin: 0;
   padding: 0;
@@ -5,11 +7,11 @@
 
   ::-webkit-scrollbar {
     width: 8px;
-    background-color: #D3D4D6FF;
+    background-color: $scroll-bar;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #9FA6AEFF;
+    background: $scroll-thumb;
     height: 8px;
     border-radius: 6px;
   }
@@ -19,4 +21,8 @@ body {
   font-family: 'Ubuntu', serif;
   font-weight: 500;
   font-size: 18px;
+
+  &.lock {
+    overflow: hidden;
+  }
 }

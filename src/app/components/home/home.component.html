@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <header class="header">
+    <div class="header__container">
+      <div class="header__body">
+        <img class="header__logo" src="./assets/images/logo.svg" alt="logo">
+        <div class="header__burger" (click)="onBurgerMenuClick()" [class.active]="showMobileMenu">
+          <span></span>
+        </div>
+        <nav class="header__menu" [class.active]="showMobileMenu">
+          <ul class="header__list">
+            <li (click)="scroll('up')">Home</li>
+            <li>About Us</li>
+            <li>What We Do</li>
+            <li (click)="scroll('down')">Contact Us</li>
+          </ul>
+          <div class="header__menu-services">
+            <p>services</p>
+            <ul class="header__list">
+              <li>Training and Implementation</li>
+              <li>Cyber Consultants</li>
+              <li>Consultancy and brand protection</li>
+              <li>Software</li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <section class="home-content">
+    <div class="home-content__left">
+      <div class="home-content__container">
+        <h1 class="home-content__title">Never Caught <br> Off-Guard Again</h1>
+        <div class="home-content__description">
+          <p>
+            We are specialist in protecting your assets and reputation to make sure you operate risk-free and focus on
+            your core business.
+          </p>
+          <button (click)="scroll('down')">Learn more</button>
+          <img class="home-content__scroll-down" (click)="scroll('down')" src="./assets/images/scroll-down.svg"
+               alt="scroll down">
+        </div>
+      </div>
+    </div>
+    <div class="home-content__right">
+      <img src="./assets/images/space-helmet.svg" alt="">
+    </div>
+  </section>
+</div>
+
+
+
+
+
