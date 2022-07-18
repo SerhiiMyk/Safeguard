@@ -1,5 +1,5 @@
 {
-  "extends": "stylelint-config-standard",
+  "extends": "stylelint-config-standard-scss",
   "customSyntax":"postcss-scss",
   "syntax": "scss",
   "rules": {
@@ -13,6 +13,7 @@
       {
         "message": "Class selector should be bem .block-name__element-name_modifier-name_modifier-value"
       }
-    ]
+    ],
+    "scss/no-global-function-names": null
   }
 }

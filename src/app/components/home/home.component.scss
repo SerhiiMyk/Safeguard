@@ -1,5 +1,5 @@
-@import 'colors';
-@import 'mixins';
+@import "colors";
+@import "mixins";
 
 .wrapper {
   background: $main-background;
@@ -15,8 +15,8 @@
   z-index: 10;
   padding-top: 30px;
 
-  &:before {
-    content: '';
+  &::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -34,7 +34,9 @@
 
   &__body {
     position: relative;
+
     @include flex(row, space-between, center);
+
     height: 80px;
   }
 
@@ -53,14 +55,14 @@
       list-style: none;
       margin-left: 22px;
       padding: 14px;
-      text-shadow: 0 4px 3px rgba(0, 0, 0, 0.2);
+      text-shadow: 0 4px 3px rgb(0 0 0 / 20%);
       border-radius: 12px;
       transition: 250ms;
 
       &:hover {
         background-color: $white;
         cursor: pointer;
-        box-shadow: 0 4px 3px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 3px rgb(0 0 0 / 20%);
         text-shadow: none;
       }
     }
@@ -77,28 +79,32 @@
 
 .home-content {
   padding-top: 170px;
+
   @include flex(row, space-between, stretch);
 
   &__title {
     width: 100%;
     font-size: 64px;
-    font-family: 'Anton', serif;
+    font-family: Anton, serif;
     text-transform: uppercase;
-    text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 5px 5px rgb(0 0 0 / 20%);
   }
 
   &__container {
     flex: 0 1 641px;
+
     @include flex(column, stretch, flex-end);
+
     padding: 0 20px;
   }
 
   &__left {
     min-width: 470px;
     flex: 0 1 936px;
-    @include flex(row, flex-end, stretch);
-    padding-top: 100px;
 
+    @include flex(row, flex-end, stretch);
+
+    padding-top: 100px;
   }
 
   &__right {
@@ -117,7 +123,7 @@
 
     p {
       line-height: 29px;
-      text-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+      text-shadow: 0 5px 5px rgb(0 0 0 / 20%);
     }
 
     button {
@@ -126,12 +132,13 @@
       padding: 22px 40px;
       border: none;
       border-radius: 12px;
-      box-shadow: 0 4px 3px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 3px rgb(0 0 0 / 20%);
       transition: 250ms;
       font-size: 16px;
       font-weight: 500;
       font-family: Ubuntu, sans-serif;
       background-color: $white;
+
       @include hover($black, 90%);
     }
   }
@@ -144,15 +151,14 @@
 .scrolling-active {
   padding-top: 0;
 
-  &:before {
-    background-color: rgba(255, 188, 0, 0.8);
+  &::before {
+    background-color: rgb(255 188 0 / 80%);
     backdrop-filter: blur(8px);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
   }
 }
 
 @media (max-width: 767px) {
-
   .header {
     padding-top: 15px;
   }
@@ -164,37 +170,6 @@
     position: relative;
     z-index: 3;
 
-    &:hover {
-      cursor: pointer;
-      transform: scale(120%);
-      transition: all 0.3s ease 0s;
-
-      &:before, &:after, span {
-        background-color: lighten(black, 30%);
-      }
-    }
-
-    &:before, &:after {
-      content: '';
-      width: 100%;
-      height: 3px;
-      position: absolute;
-      background-color: black;
-      transition: all 0.3s ease 0s;
-
-    }
-
-    &:before {
-      width: 18px;
-      top: 0;
-    }
-
-    &:after {
-      width: 18px;
-      bottom: 0;
-      right: 0;
-    }
-
     span {
       width: 100%;
       height: 3px;
@@ -204,13 +179,46 @@
       background-color: black;
     }
 
-    &.active:before {
+    &::before,
+    &::after {
+      content: "";
+      width: 100%;
+      height: 3px;
+      position: absolute;
+      background-color: black;
+      transition: all 0.3s ease 0s;
+    }
+
+    &::before {
+      width: 18px;
+      top: 0;
+    }
+
+    &::after {
+      width: 18px;
+      bottom: 0;
+      right: 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(120%);
+      transition: all 0.3s ease 0s;
+
+      &::before,
+      &::after,
+      span {
+        background-color: lighten(black, 30%);
+      }
+    }
+
+    &.active::before {
       width: 100%;
       top: 8px;
       transform: rotate(45deg);
     }
 
-    &.active:after {
+    &.active::after {
       width: 100%;
       bottom: 8px;
       transform: rotate(-45deg);
@@ -308,8 +316,8 @@
       }
     }
   }
+
   .scrolling-active {
     padding-top: 0;
   }
 }
-

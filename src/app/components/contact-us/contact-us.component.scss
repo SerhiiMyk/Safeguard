@@ -7,11 +7,10 @@
 }
 
 .flex-container {
-  @include flex(row, center, center)
+  @include flex(row, center, center);
 }
 
 .contact-us {
-
   &__top {
     position: relative;
     flex: 0 1 1170px;
@@ -23,6 +22,7 @@
 
   &__up-btn {
     @include flex(row, center, center);
+
     position: absolute;
     top: 0;
     right: -144px;
@@ -41,7 +41,7 @@
     flex-basis: 1170px;
     height: 819px;
     margin-top: 31px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 16px rgb(0 0 0 / 8%);
     border-radius: 30px;
     padding: 20px 60px 70px 60px;
 
@@ -50,12 +50,13 @@
       padding: 22px 32px;
       border: none;
       border-radius: 16px;
-      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.08);
+      box-shadow: 4px 4px 8px rgb(0 0 0 / 8%);
       transition: 250ms;
       background-color: $main-background;
       font-size: 16px;
       font-weight: 500;
       font-family: Ubuntu, sans-serif;
+
       @include hover($main-background, 10%);
 
       &:disabled {
@@ -72,7 +73,7 @@
       width: ptp(510, 1170);
       border: none;
       outline-style: none;
-      border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+      border-bottom: solid 1px rgb(0 0 0 / 20%);
       padding-bottom: 6px;
       font-size: 18px;
     }
@@ -88,7 +89,7 @@
       width: ptp(510, 1170);
       border: none;
       outline-style: none;
-      border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+      border-bottom: solid 1px rgb(0 0 0 / 20%);
       resize: none;
       padding-bottom: 20px;
     }
@@ -107,17 +108,15 @@
 }
 
 @media (max-width: 767px) {
-
   .wrapper {
     margin: 25px 24px;
   }
 
   .contact-us {
-
     &__form {
       margin-top: 31px;
       height: auto;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 16px rgb(0 0 0 / 8%);
       padding: 24px;
 
       input {
@@ -133,6 +132,7 @@
       margin-top: 0;
       width: 140px;
       height: 48px;
+
       @include flex(row, center, center);
 
       img {
@@ -164,5 +164,3 @@
     }
   }
 }
-
-

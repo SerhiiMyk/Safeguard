@@ -1,4 +1,5 @@
 @function ptp($searchPx, $hundredPercentPx) {
-  $res: ($searchPx/$hundredPercentPx) * 100%;
-  @return $res
+  $res: ($searchPx / $hundredPercentPx) * 100%;
+
+  @return $res;
 }
