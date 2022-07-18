@@ -1,0 +1,66 @@
+<div class="wrapper">
+  <div class="flex-container">
+    <div class="contact-us__top">
+      <div class="contact-us__title">
+        <img src="./assets/images/contact-us.svg" alt="contact-us title">
+      </div>
+      <div class="contact-us__up-btn" (click)="scrollUp()">
+        <i class="bi bi-chevron-up"></i>
+      </div>
+    </div>
+  </div>
+  <div class="flex-container">
+    <div class="contact-us__form">
+      <form [formGroup]="form" (ngSubmit)="submitForm()">
+        <div class="contact-us__input-div">
+          <label>
+            <p>Full Name</p>
+            <input type="text" formControlName="name">
+          </label>
+          <p class="error" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">Full Name is required</p>
+        </div>
+        <div class="contact-us__input-div">
+          <label>
+            <p>Company Name</p>
+            <input type="text" formControlName="companyName">
+          </label>
+          <p class="error" *ngIf="form.get('companyName')?.invalid && form.get('companyName')?.touched">
+            Company Name is required
+          </p>
+        </div>
+        <br>
+        <div class="contact-us__input-div">
+          <label>
+            <p>Phone Number</p>
+            <input type="text" formControlName="phoneNumber">
+          </label>
+          <p class="error" *ngIf="form.get('phoneNumber')?.invalid && form.get('phoneNumber')?.touched">
+            Phone Number is invalid. Use template +380000000000
+          </p>
+        </div>
+        <div class="contact-us__input-div">
+          <label>
+            <p>E-mail</p>
+            <input type="text" formControlName="email">
+          </label>
+          <p class="error" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+            Email is invalid
+          </p>
+        </div>
+        <br>
+        <div class="contact-us__input-div">
+          <label>
+            <p>Write Us Messages</p>
+            <textarea rows="5" formControlName="message"></textarea>
+          </label>
+          <p class="error" *ngIf="form.get('message')?.invalid && form.get('message')?.touched">
+            Message is required
+          </p>
+        </div>
+        <div class="contact-us__btn">
+          <button type="submit" [disabled]="form.invalid">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
