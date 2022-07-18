@@ -35,7 +35,7 @@
             <input type="text" formControlName="phoneNumber">
           </label>
           <p class="error" *ngIf="form.get('phoneNumber')?.invalid && form.get('phoneNumber')?.touched">
-            Phone Number is invalid. Use template +380000000000
+            Phone Number is invalid. Use pattern +380000000000
           </p>
         </div>
         <div class="contact-us__input-div">
