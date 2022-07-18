@@ -14,23 +14,24 @@ export class ContactUsComponent {
     phoneNumber: new FormControl('', [Validators.required, this.phoneValidator]),
     email: new FormControl('', [Validators.required, Validators.email]),
     message: new FormControl('', Validators.required),
-  })
+  });
 
 
   phoneValidator(control: FormControl) {
-    const regex = /(?=.*[a-zA-z])|(?=.*[#$@!%&*?])/.test(control.value)
+    const regex = /(?=.*[a-zA-z])|(?=.*[#$@!%&*?])/.test(control.value);
     if (control.value.length !== 13 || !control.value.includes('+380') || regex) {
-      return { lengthError: true }
+      return { lengthError: true };
     } else {
-      return null
+      return null;
     }
   }
 
   submitForm() {
-    console.log(this.form.value)
+    // tslint:disable-next-line:no-console
+    console.log(this.form.value);
   }
 
   scrollUp() {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }

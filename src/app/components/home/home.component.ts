@@ -10,24 +10,24 @@ export class HomeComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     window.addEventListener('scroll', () => {
-      let header = document.querySelector('.header')
-      header?.classList.toggle('scrolling-active', window.scrollY > 0)
-    })
+      const header = document.querySelector('.header');
+      header?.classList.toggle('scrolling-active', window.scrollY > 0);
+    });
   }
 
   scroll(direction: string) {
     if (this.showMobileMenu) {
-      this.onBurgerMenuClick()
+      this.onBurgerMenuClick();
     }
     if (direction === 'up') {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      window.scrollTo({ top: 860, behavior: 'smooth' })
+      window.scrollTo({ top: 860, behavior: 'smooth' });
     }
   }
 
   onBurgerMenuClick() {
-    this.showMobileMenu = !this.showMobileMenu
-    document.querySelector('body')?.classList.toggle('lock')
+    this.showMobileMenu = !this.showMobileMenu;
+    document.querySelector('body')?.classList.toggle('lock');
   }
 }
